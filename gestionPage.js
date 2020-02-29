@@ -31,15 +31,15 @@ var gestionPage = {
             break;
             case ".png" :
                 data.contentType = "image/png";
-                data.dossier = "assets/"
+                data.dossier = "assets/images/"
             break
             case ".jpg" :
                 data.contentType = "image/jpeg";
-                data.dossier = "assets/"
+                data.dossier = "assets/images/"
             break
-            case ".ttf" :
-                data.contentType = "";
-                data.dossier = "assets/font/"
+            case ".json" :
+                data.contentType = "application/json";
+                data.dossier = "assets/json/"
             break
             case ".ogg" :
                 data.contentType = "audio/ogg";
