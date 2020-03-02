@@ -2,14 +2,17 @@ var jeu = {
     scene : null,
     world : world,
     player : player,
-    cursor : null
+    cursor : null,
+    zombie : zombie
 }
+
 
 function preload(){
     jeu.scene = this;
     jeu.scene.load.image("tiles","tilesheet.png");
     jeu.scene.load.tilemapTiledJSON("map","JeuPlateforme.json");
     jeu.scene.load.atlas("player","player.png","playerAtlas.json");
+    jeu.scene.load.atlas("zombie","zombie.png","zombieAtlas.json");
     jeu.scene.load.image("spark","particle.png");
     jeu.scene.load.audio("gemmeSound","gemmeSound.ogg");
 
@@ -22,10 +25,10 @@ function preload(){
 function create(){
     jeu.world.initialiserWorld();
     jeu.player.initialiserPlayer();
+    jeu.zombie.createZombie();
     jeu.player.generatePlayerAnimations();
     jeu.world.gererCollider();
     jeu.cursor = jeu.scene.input.keyboard.createCursorKeys();
-
     jeu.world.gererCamera();
 }
 function update(time, delta){
