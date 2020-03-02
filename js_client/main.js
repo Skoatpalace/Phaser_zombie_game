@@ -27,6 +27,8 @@ function create(){
     jeu.player.initialiserPlayer();
     jeu.zombie.createZombie();
     jeu.player.generatePlayerAnimations();
+    jeu.zombie.generateZombieAnimations();
+    jeu.zombie.gererDeplacement();
     jeu.world.gererCollider();
     jeu.cursor = jeu.scene.input.keyboard.createCursorKeys();
     jeu.world.gererCamera();
