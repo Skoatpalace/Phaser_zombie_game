@@ -1,8 +1,9 @@
 var jeu = {
     scene : null,
     world : world,
-    player : player
-};
+    player : player,
+    cursor : null
+}
 
 function preload(){
     jeu.scene = this;
@@ -11,11 +12,13 @@ function preload(){
     jeu.scene.load.atlas("player","player.png","playerAtlas.json");
 }
 function create(){
-    jeu.player.initPlayer();
-    jeu.player.generatePlayerAnimations(); 
-    jeu.world.initWorld();
-}
+    jeu.world.initialiserWorld();
+    jeu.player.initialiserPlayer();
+    jeu.player.generatePlayerAnimations();
 
+    jeu.world.gererCollider();
+    jeu.cursor = jeu.scene.input.keyboard.createCursorKeys();
+}
 function update(time, delta){
-     
+    jeu.player.gererDeplacement();
 }
