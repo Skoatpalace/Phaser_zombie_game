@@ -15,9 +15,10 @@ function create(){
     jeu.world.initialiserWorld();
     jeu.player.initialiserPlayer();
     jeu.player.generatePlayerAnimations();
-
     jeu.world.gererCollider();
     jeu.cursor = jeu.scene.input.keyboard.createCursorKeys();
+
+    jeu.world.gererCamera();
 }
 function update(time, delta){
     jeu.player.gererDeplacement();
