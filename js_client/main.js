@@ -3,7 +3,7 @@ var jeu = {
     world : world,
     player : player,
     cursor : null,
-    zombie : zombie
+    zombieTemplate : zombieTemplate
 }
 
 
@@ -25,10 +25,12 @@ function preload(){
 function create(){
     jeu.world.initialiserWorld();
     jeu.player.initialiserPlayer();
-    jeu.zombie.createZombie();
     jeu.player.generatePlayerAnimations();
-    jeu.zombie.generateZombieAnimations();
-    jeu.zombie.gererDeplacement();
+    jeu.zombieTemplate.generateZombieAnimations();
+
+    jeu.zombieTemplate.createZombie(jeu.world.debutZombie1.x,jeu.world.debutZombie1.y,100).initZombie();
+    jeu.zombieTemplate.createZombie(jeu.world.debutZombie2.x,jeu.world.debutZombie2.y,150).initZombie();
+    jeu.zombieTemplate.createZombie(jeu.world.debutZombie3.x,jeu.world.debutZombie3.y,300).initZombie();
     jeu.world.gererCollider();
     jeu.cursor = jeu.scene.input.keyboard.createCursorKeys();
     jeu.world.gererCamera();
